@@ -1,29 +1,51 @@
 /* 
     Beastie Boys class with a constructor,
-    and the fightForYourRight method
+    and the partyTime method which replaces the 
+    html headline with value of the party property
 */
 
-function BeastieBoy(name, MCname, style, toParty) {
-    this.name = name
-    this.MCname = MCname
-    this.style = style
-    this.fightForYourRight = function() {
-        return toParty
+class BeastieBoy {
+    constructor(real, emcee, style, party) {
+        this.name = {
+            real : real,
+            emcee : emcee
+        }
+        this.emcee = emcee
+        this.style = style
+        this.party = party
+        this.partyTime = function() {
+            return document.getElementById('headline').innerHTML = party 
+        }
     }
-};
+}
 
 /* 
     Initiate Beastie Boys objects using different props
 */
 
-let MCA = new BeastieBoy('Adam Yauch', 'MCA', 'Leather Jacket', 
-    'Smash TV with sledgehammer!')
+let mca = new BeastieBoy
+    (
+        real = 'Adam Yauch', 
+        emcee = 'MCA',
+        style = 'Leather Jacket', 
+        party = 'Smash TV with sledgehammer!'
+    )
 
-let adRock = new BeastieBoy('Adam Horovitz', 'Ad Rock', ['baseball cap',
-    'red t-shirt'], 'Pie fight!')
+let adRock = new BeastieBoy
+    (
+        real = 'Adam Horovitz',
+        emcee = 'Ad Rock', 
+        style = ['baseball cap', 'red t-shirt'], 
+        party = 'Pie fight!'
+    )
 
-let mikeD = new BeastieBoy('Michael Diamond', 'Mike D', ['Denim Jacket', 
-    'Fedora', 'VW Chain', ], 'Spike the punch!' )
+let mikeD = new BeastieBoy
+    (
+        real = 'Michael Diamond',
+        emcee = 'Mike D', 
+        style = ['Denim Jacket', 'Fedora', 'VW Chain'],
+        party = 'Spike the punch!' 
+    )
 
 /* 
     Add the selector element with the id 
@@ -45,7 +67,7 @@ selectElement.addEventListener('change', (event) => {
     let selected = event.target.value
     switch (selected) {
         case 'MCA':
-            MCA.selected = true;
+            mca.selected = true;
         break;
         case 'Ad Rock':
             adRock.selected = true;
@@ -65,8 +87,8 @@ selectElement.addEventListener('change', (event) => {
 
 document.getElementById("party").onclick = function changeContent() {
     if (adRock.selected === true) {
-        document.getElementById('headline').innerHTML = adRock.fightForYourRight()
-       
+        
+        adRock.partyTime()       
         /*
             Set selected to false for each object 
             (otherwise selected would be true for more 
@@ -74,11 +96,11 @@ document.getElementById("party").onclick = function changeContent() {
         */
 
         adRock.selected = false
-    } else if (MCA.selected === true) {
-        document.getElementById('headline').innerHTML = MCA.fightForYourRight()
-        MCA.selected = false
+    } else if (mca.selected === true) {
+        mca.partyTime()
+        mca.selected = false
     } else if (mikeD.selected === true) {
-        document.getElementById('headline').innerHTML = mikeD.fightForYourRight()
+        mikeD.partyTime()
         mikeD.selected = false
     } 
 }
