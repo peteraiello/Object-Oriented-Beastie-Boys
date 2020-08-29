@@ -1,5 +1,5 @@
 /* 
-    Code for Beastie Boys class with a constructor,
+    Beastie Boys class with a constructor,
     and the fightForYourRight method
 */
 
@@ -57,7 +57,7 @@ selectElement.addEventListener('change', (event) => {
 })
 
 /* 
-    a function to handle the button click that uses 
+    The function to handle the button click that uses 
     a conditional statement to check which of the
     objects is currently selected and then changes 
     the headline with the `innerHTML` method
@@ -66,7 +66,7 @@ selectElement.addEventListener('change', (event) => {
 document.getElementById("party").onclick = function changeContent() {
 
 /*
-    set selected to false for each object 
+    Set selected to false for each object 
     (otherwise selected would be true for more 
     than one Beastie Boys and the text won't change)
 */
