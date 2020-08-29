@@ -73,11 +73,11 @@ document.getElementById("party").onclick = function changeContent() {
 
     adRock.selected && mikeD.selected && MCA.selected === false 
     if (adRock.selected === true) {
-        document.getElementById('headline').innerHTML = adRock.party()
+        document.getElementById('headline').innerHTML = adRock.toParty()
     } else if (MCA.selected === true) {
-        document.getElementById('headline').innerHTML = MCA.party()
+        document.getElementById('headline').innerHTML = MCA.toParty()
     } else if (mikeD.selected === true) {
-        document.getElementById('headline').innerHTML = mikeD.party()
+        document.getElementById('headline').innerHTML = mikeD.toParty()
     } 
 }
 
