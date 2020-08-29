@@ -17,7 +17,7 @@ function BeastieBoy(name, MCname, style, toParty) {
 */
 
 let MCA = new BeastieBoy('Adam Yauch', 'MCA', 'Leather Jacket', 
-    'Smash TV with sledgehammer')
+    'Smash TV with sledgehammer!')
 
 let adRock = new BeastieBoy('Adam Horovitz', 'Ad Rock', ['baseball cap',
     'red t-shirt'], 'Pie fight!')
@@ -64,20 +64,22 @@ selectElement.addEventListener('change', (event) => {
 */
 
 document.getElementById("party").onclick = function changeContent() {
-
-/*
-    Set selected to false for each object 
-    (otherwise selected would be true for more 
-    than one Beastie Boys and the text won't change)
-*/
-
-    adRock.selected && mikeD.selected && MCA.selected === false 
     if (adRock.selected === true) {
-        document.getElementById('headline').innerHTML = adRock.toParty()
+        document.getElementById('headline').innerHTML = adRock.fightForYourRight()
+       
+        /*
+            Set selected to false for each object 
+            (otherwise selected would be true for more 
+            than one Beastie Boys and the text won't change)
+        */
+
+        adRock.selected = false
     } else if (MCA.selected === true) {
-        document.getElementById('headline').innerHTML = MCA.toParty()
+        document.getElementById('headline').innerHTML = MCA.fightForYourRight()
+        MCA.selected = false
     } else if (mikeD.selected === true) {
-        document.getElementById('headline').innerHTML = mikeD.toParty()
+        document.getElementById('headline').innerHTML = mikeD.fightForYourRight()
+        mikeD.selected = false
     } 
 }
 
