@@ -1,5 +1,5 @@
 # Object Oriented Beastie Boys
 
-What's the time? 
+A project demonstrating Object Oriented Programming using the Beastie Boys...(of course!)
 
-Time to get ill
+The CSS is handled by [Bulma](https://bulma.io/)
